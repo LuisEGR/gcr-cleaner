@@ -1,0 +1,15 @@
+# action.yml
+name: 'GCR Cleaner Action'
+description: 'Clean GCR and Artifact Registry images'
+inputs:
+  repository-id:  # id of input
+    description: 'Name of the repository to clean'
+    required: true
+outputs:
+  total: # id of output
+    description: 'total'
+runs:
+  using: 'docker'
+  image: 'us-docker.pkg.dev/gcr-cleaner/gcr-cleaner/gcr-cleaner-cli'
+  args:
+    - -repo=${{ inputs.repository-id }}
