@@ -5,6 +5,9 @@ inputs:
   repository-id:  # id of input
     description: 'Name of the repository to clean'
     required: true
+  keep:
+    description: 'Total images to keep'
+    required: false
 outputs:
   total: # id of output
     description: 'total'
@@ -13,3 +16,4 @@ runs:
   image: 'docker://us-docker.pkg.dev/gcr-cleaner/gcr-cleaner/gcr-cleaner-cli:latest'
   args:
     - -repo=${{ inputs.repository-id }}
+    - -keep=${{ inputs.keep }}
