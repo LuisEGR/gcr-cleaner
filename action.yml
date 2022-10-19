@@ -10,6 +10,6 @@ outputs:
     description: 'total'
 runs:
   using: 'docker'
-  image: 'us-docker.pkg.dev/gcr-cleaner/gcr-cleaner/gcr-cleaner-cli'
+  image: 'docker://us-docker.pkg.dev/gcr-cleaner/gcr-cleaner/gcr-cleaner-cli:latest'
   args:
     - -repo=${{ inputs.repository-id }}
